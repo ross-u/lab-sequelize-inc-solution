@@ -36,13 +36,16 @@ sequelize
   .then(() => {
     // Retrieve a single row and include associated rows
 
-    // 6.1 Retrieve one user by `first_name` and include `posts`
+    // 1. Retrieve one user by `first_name` and include associated `posts`
     // return User.findOne({ where: { first_name: "Ana" }, include: "posts" });
 
-    // 6.2 Retrieve one user by primary key and include `posts`
+    // 2. Retrieve one user by primary key and include associated `posts`
     // return User.findByPk(2, { include: "posts" });
 
-    // 6.3 Retrieve one user by `email` and include `posts` and `address`
+    // 3. Retrieve all users and include associated `posts`
+    // User.findAll({ include: ["posts"] });    
+
+    // 4. Retrieve one user by `email` and include associated `posts` and `address`
     return User.findOne({
       where: { email: "maxime@mail.com" },
       include: [
@@ -53,7 +56,7 @@ sequelize
   })
   .then((oneUser) => printRows("oneUser", oneUser))
   .then(() => {
-    // 7. Retrieve all users and include `address` and `posts`
+    // 5. Retrieve all users and include associated `address` and `posts`
     return User.findAll({
       include: [
         { model: Address, as: "address" },
