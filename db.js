@@ -32,7 +32,7 @@ User.belongsTo(Address, {
 });
 
 
-// One-To-Many (1:N) - User <-> Post                  //  <== ADD
+// One-To-Many (1:N) - User <-> Post
 // Creates a foreign key in the Post table
 User.hasMany(Post, { 
   as: "posts"
