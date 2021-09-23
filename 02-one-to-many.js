@@ -27,7 +27,7 @@ sequelize
   })
   .then((createdPosts) => printRows("createdPosts", createdPosts))
   .then(() => {
-    return User.findOne({ where: { first_name: "Ana" } }, { include: "posts" });
+    return User.findOne({ where: { first_name: "Maxime" } }, { include: "posts" });
   })
   .then((userWithPosts) => printRows("userWithPosts", userWithPosts))
   .then(() => {
