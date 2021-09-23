@@ -17,5 +17,20 @@ const User = require("./models/user.model")(sequelize);
 const Address = require("./models/address.model")(sequelize);
 const Post = require("./models/post.model")(sequelize);
 
+
+// Create relationships                               //  <==ADD
+
+// One-To-One (1:1) - User <-> Address
+// Creates a foreign key in the User table
+Address.hasOne(User);
+
+User.belongsTo(Address, {
+  foreignKey: "AddressId",
+  as: "address",
+  // Set the name of the foreign key in the User to be `AddressId`
+  // Create alias `address` in the User that will be used to get the user's address.
+});
+
+
 // Export the sequelize connection and initialized models
 module.exports = { sequelize, User, Address, Post };
