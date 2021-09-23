@@ -30,7 +30,7 @@ sequelize
   })
   .then((createdPosts) => {
     console.log(`Created ${createdPosts.length} Post rows`);
-    console.log("Finished seeding the Database!");
+    console.log("Finished Seeding the Database!");
   })
   // Examples: Using `include` to include associated rows in the result
   .then(() => {
