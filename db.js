@@ -18,7 +18,7 @@ const Address = require("./models/address.model")(sequelize);
 const Post = require("./models/post.model")(sequelize);
 
 
-// Create relationships                               //  <==ADD
+// Create relationships
 
 // One-To-One (1:1) - User <-> Address
 // Creates a foreign key in the User table
