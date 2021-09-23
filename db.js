@@ -32,5 +32,18 @@ User.belongsTo(Address, {
 });
 
 
+// One-To-Many (1:N) - User <-> Post                  //  <== ADD
+// Creates a foreign key in the Post table
+User.hasMany(Post, { 
+  as: "posts"
+  // Create alias `posts` in the User that will be used to get the user's posts.
+});
+
+Post.belongsTo(User, {
+  foreignKey: "UserId",
+  // Set the name of the foreign key in the Post to be `UserId`
+});
+
+
 // Export the sequelize connection and initialized models
 module.exports = { sequelize, User, Address, Post };
