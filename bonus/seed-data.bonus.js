@@ -1,23 +1,50 @@
+const companies = [
+  { company_name: "Microsoft", homepage_url : "http://www.microsoft.com", twitter_username : "Microsoft", category : "software", number_of_employees : 181000, founded_year : 1974 },
+  { company_name: "Apple", homepage_url : "http://www.apple.com", twitter_username : "Apple", category : "hardware", number_of_employees : 147000, founded_year : 1976 },
+  { company_name: "Google", homepage_url : "http://google.com", twitter_username : "Google", category : "software", number_of_employees : 135000, founded_year : 1998 },
+  { company_name: "Facebook", homepage_url : "http://facebook.com", twitter_username : "Facebook", category : "social", number_of_employees : 58604, founded_year : 2004 },
+  { company_name: "Twitter", homepage_url : "http://twitter.com", twitter_username : "Twitter", category : "social", number_of_employees : 5500, founded_year : 2006 },
+];
 
-const company = {
-  company_name: "Apple",
-  homepage_url: "http://www.apple.com",
-  twitter_username: "Apple",
-  category: "hardware",
-  number_of_employees: 147000,
-  founded_year: 1976
-};
-
-
-
-const address = {
-  company_name: "Apple",
-  street: "1 Apple Park Way",
-  city: "Cupertino",
-  state: "California",
-  country: "USA",
-  image: "https://i.imgur.com/z5RFDxq.jpg",
-};
+const addresses = [
+  {
+    company_name: "Facebook",
+    street: "1 Hacker Way",
+    city: "Menlo Park",
+    state: "California",
+    country: "USA",
+    image: "https://i.imgur.com/azxVWEL.png",
+  },
+  {
+    company_name: "Twitter",
+    street: "1355 Market Street Suite 900",
+    city: "San Francisco",
+    state: "California",
+    country: "USA",
+    image: "https://i.imgur.com/EMpPj9X.jpg",
+  },
+  { company_name: "Google",
+    street: "1600 Amphitheatre Parkway",
+    city: "Mountain View",
+    state: "California",    
+    country: "USA",
+    image: "blob:https://imgur.com/4aabf24e-3ce7-4d4f-aa93-0aebe021d6c4",
+  },
+  { company_name: "Apple",
+    street: "1 Apple Park Way",
+    city: "Cupertino",
+    state: "California",    
+    country: "USA",
+    image: "https://i.imgur.com/z5RFDxq.jpg",
+  },
+  { company_name: "Microsoft",
+    street: "One Microsoft Way",
+    city: "Redmond",
+    state: "California",    
+    country: "Washington",
+    image: "https://i.imgur.com/VSZU6NK.jpg",
+  }
+];
 
 const employees = [
   {
@@ -25,7 +52,7 @@ const employees = [
     last_name: "Phillips",
     date_of_birth: "Thu Mar 19 1970 05:40:43 GMT+0100 (Central European Standard Time)",
     email: "anaphillips@mail.com",
-    salary: 372.19,
+    salary: 3372.19,
     department: "hr",
     "rank": "employee"
   },
@@ -159,5 +186,5 @@ const employees = [
 
 
 
-module.exports = { company, address, employees };
+module.exports = { companies, addresses, employees };
 

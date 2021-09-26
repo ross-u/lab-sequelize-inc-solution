@@ -13,37 +13,37 @@ const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
 });
 
 // Initialize models
-const User = require("./models/user.model")(sequelize);
+const Company = require("./models/company.model")(sequelize);
 const Address = require("./models/address.model")(sequelize);
-const Post = require("./models/post.model")(sequelize);
+const Employee = require("./models/employee.model")(sequelize);
 
 
 // Create relationships
 
-// One-To-One (1:1) - User <-> Address
-// Creates a foreign key in the User table
-Address.hasOne(User);
+// One-To-One (1:1) - Company <-> Address
+// Creates a foreign key in the Company table
+Address.hasOne(Company);
 
-User.belongsTo(Address, {
+Company.belongsTo(Address, {
   foreignKey: "AddressId",
   as: "address",
-  // Set the name of the foreign key in the User to be `AddressId`
-  // Create alias `address` in the User that will be used to get the user's address.
+  // Set the name of the foreign key in the Company to be `AddressId`
+  // Create alias `address` in the Company that will be used to get the Company's Address.
 });
 
 
-// One-To-Many (1:N) - User <-> Post
-// Creates a foreign key in the Post table
-User.hasMany(Post, { 
-  as: "posts"
-  // Create alias `posts` in the User that will be used to get the user's posts.
+// One-To-Many (1:N) - Company <-> Employee
+// Creates a foreign key in the Employee table
+Company.hasMany(Employee, { 
+  as: "employees"
+  // Create alias `employees` in the Company that will be used to get the Company's employees.
 });
 
-Post.belongsTo(User, {
-  foreignKey: "UserId",
-  // Set the name of the foreign key in the Post to be `UserId`
+Employee.belongsTo(Company, {
+  foreignKey: "CompanyId",
+  // Set the name of the foreign key in the Employee to be `CompanyId`
 });
 
 
 // Export the sequelize connection and initialized models
-module.exports = { sequelize, User, Address, Post };
+module.exports = { sequelize, Company, Address, Employee };
